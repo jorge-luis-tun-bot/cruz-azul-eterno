@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071b49">
+
+    <title>Nuestra historia | Cruz Azul Eterno</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --azul: #071b49;
+            --azul-claro: #1268bd;
+            --celeste: #4db8ff;
+            --fondo: #f3f6fb;
+            --texto: #344054;
+            --gris: #667085;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--fondo);
+            color: var(--texto);
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .contenedor {
+            width: min(1050px, 92%);
+            margin: auto;
+        }
+
+        header {
+            background: var(--azul);
+            padding: 18px 0;
+        }
+
+        .barra {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--celeste);
+        }
+
+        .volver {
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .volver:hover {
+            color: var(--celeste);
+        }
+
+        .hero {
+            padding: 90px 20px;
+            text-align: center;
+            color: white;
+            background:
+                radial-gradient(circle at 80% 20%,
+                rgba(77,184,255,.25), transparent 30%),
+                linear-gradient(135deg, #061438, #1268bd);
+        }
+
+        .etiqueta {
+            display: inline-block;
+            color: #c6eaff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: 0 auto 20px;
+            font-size: clamp(32px, 5vw, 55px);
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--celeste);
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #e0ebfc;
+            font-size: 15px;
+        }
+
+        .seccion {
+            padding: 65px 0;
+        }
+
+        .introduccion {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .introduccion h2,
+        .titulo-seccion {
+            color: var(--azul);
+            font-size: clamp(25px, 4vw, 35px);
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .introduccion p {
+            color: var(--gris);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .linea-tiempo {
+            position: relative;
+            max-width: 850px;
+            margin: 40px auto 0;
+        }
+
+        .linea-tiempo::before {
+            content: "";
+            position: absolute;
+            left: 19px;
+            top: 12px;
+            bottom: 15px;
+            width: 3px;
+            background: #c6e5ff;
+        }
+
+        .momento {
+            position: relative;
+            padding: 0 0 35px 60px;
+        }
+
+        .momento:last-child {
+            padding-bottom: 0;
+        }
+
+        .punto {
+            position: absolute;
+            top: 5px;
+            left: 9px;
+            width: 23px;
+            height: 23px;
+            border: 5px solid #d9edff;
+            border-radius: 50%;
+            background: var(--azul-claro);
+            z-index: 1;
+        }
+
+        .momento-contenido {
+            padding: 25px;
+            border: 1px solid #e3eaf3;
+            border-radius: 14px;
+            background: white;
+            box-shadow: 0 8px 25px rgba(7,27,73,.05);
+        }
+
+        .anio {
+            display: inline-block;
+            color: var(--azul-claro);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .momento h3 {
+            color: var(--azul);
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .momento p {
+            color: var(--gris);
+            font-size: 13px;
+        }
+
+        .valores {
+            background: white;
+        }
+
+        .valores h2 {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .rejilla {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .tarjeta {
+            padding: 30px 22px;
+            text-align: center;
+            border: 1px solid #e5eaf2;
+            border-radius: 15px;
+            background: #fff;
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(7,27,73,.09);
+        }
+
+        .tarjeta i {
+            display: grid;
+            place-items: center;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 18px;
+            border-radius: 15px;
+            color: var(--azul-claro);
+            background: #eaf5ff;
+            font-size: 25px;
+        }
+
+        .tarjeta h3 {
+            color: var(--azul);
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta p {
+            color: var(--gris);
+            font-size: 12px;
+        }
+
+        .llamado {
+            padding: 45px 25px;
+            border-radius: 18px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(120deg, #071b49, #1268bd);
+        }
+
+        .llamado h2 {
+            font-size: clamp(24px, 4vw, 34px);
+            margin-bottom: 12px;
+        }
+
+        .llamado p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #e0ebfc;
+            font-size: 13px;
+        }
+
+        .boton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 22px;
+            border-radius: 8px;
+            color: var(--azul);
+            background: white;
+            font-size: 13px;
+            font-weight: 800;
+            transition: transform .25s;
+        }
+
+        .boton:hover {
+            color: var(--azul-claro);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            margin-top: 65px;
+            padding: 25px 0;
+            text-align: center;
+            color: #c5d2e7;
+            background: #06132f;
+            font-size: 11px;
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                padding: 65px 15px;
+            }
+
+            .rejilla {
+                grid-template-columns: 1fr;
+            }
+
+            .seccion {
+                padding: 45px 0;
+            }
+
+            .momento {
+                padding-left: 48px;
+            }
+
+            .linea-tiempo::before {
+                left: 15px;
+            }
+
+            .punto {
+                left: 5px;
+            }
+
+            .momento-contenido {
+                padding: 20px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="contenedor barra">
+        <a href="eterno.html" class="logo">
+            Cruz Azul <span>Eterno</span>
+        </a>
+
+        <a href="eterno.html" class="volver">
+            <i class="fa-solid fa-arrow-left"></i>
+            Volver al inicio
+        </a>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <span class="etiqueta">
+            <i class="fa-solid fa-book-open"></i>
+            NUESTRA HISTORIA
+        </span>
+
+        <h1>
+            Una pasión que <span>trasciende generaciones</span>
+        </h1>
+
+        <p>
+            Descubre los orígenes, los triunfos y los momentos que
+            hicieron de Cruz Azul uno de los clubes más reconocidos
+            del fútbol mexicano.
+        </p>
+    </section>
+
+    <section class="seccion">
+        <div class="contenedor introduccion">
+
+            <h2>Mucho más que un equipo</h2>
+
+            <p>
+                Cruz Azul representa una historia de esfuerzo, identidad
+                y pasión. Sus raíces están ligadas a la cooperativa cementera
+                de Jasso, Hidalgo, donde nació el equipo que con el tiempo
+                conquistaría a miles de aficionados.
+            </p>
+
+            <p>
+                A lo largo de las décadas, La Máquina ha construido una
+                trayectoria marcada por campeonatos, grandes jugadores
+                y una afición que acompaña al equipo en cada etapa.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="seccion valores">
+        <div class="contenedor">
+
+            <h2 class="titulo-seccion">
+                Momentos que marcaron una historia
+            </h2>
+
+            <div class="linea-tiempo">
+
+                <article class="momento">
+                    <span class="punto"></span>
+
+                    <div class="momento-contenido">
+                        <span class="anio">1927</span>
+                        <h3>Los orígenes de la cooperativa</h3>
+                        <p>
+                            La historia de la Cooperativa La Cruz Azul
+                            se remonta a 1927. El equipo de fútbol surgiría
+                            de esa comunidad y desarrollaría una identidad
+                            profundamente ligada a sus raíces en Hidalgo.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="momento">
+                    <span class="punto"></span>
+
+                    <div class="momento-contenido">
+                        <span class="anio">1964</span>
+                        <h3>El ascenso al máximo circuito</h3>
+                        <p>
+                            Cruz Azul consiguió el ascenso a la Primera
+                            División del fútbol mexicano, abriendo una
+                            etapa que transformaría su historia deportiva.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="momento">
+                    <span class="punto"></span>
+
+                    <div class="momento-contenido">
+                        <span class="anio">1968–1980</span>
+                        <h3>La época dorada</h3>
+                        <p>
+                            Durante este periodo, el club obtuvo varios
+                            campeonatos de liga y consolidó su prestigio
+                            como una de las grandes instituciones del fútbol
+                            mexicano.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="momento">
+                    <span class="punto"></span>
+
+                    <div class="momento-contenido">
+                        <span class="anio">1997</span>
+                        <h3>Un título que quedó en la memoria</h3>
+                        <p>
+                            Cruz Azul conquistó el torneo Invierno 1997,
+                            un campeonato recordado por su dramática final
+                            y por el lugar que ocupa en la memoria celeste.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="momento">
+                    <span class="punto"></span>
+
+                    <div class="momento-contenido">
+                        <span class="anio">2021</span>
+                        <h3>La Décima estrella</h3>
+                        <p>
+                            En el torneo Guard1anes 2021, Cruz Azul se
+                            coronó campeón de liga y terminó una larga
+                            espera de 23 años entre campeonatos de liga.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="momento">
+                    <span class="punto"></span>
+
+                    <div class="momento-contenido">
+                        <span class="anio">2026</span>
+                        <h3>Una historia que continúa</h3>
+                        <p>
+                            La historia celeste sigue escribiéndose con
+                            nuevas generaciones de futbolistas, retos
+                            deportivos y una afición que mantiene viva
+                            su pasión por los colores del club.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <div class="contenedor">
+
+            <h2 class="titulo-seccion" style="text-align:center">
+                Lo que representa Cruz Azul
+            </h2>
+
+            <div class="rejilla">
+
+                <article class="tarjeta">
+                    <i class="fa-solid fa-heart"></i>
+                    <h3>Pasión celeste</h3>
+                    <p>
+                        El sentimiento de una afición que comparte
+                        sus colores y acompaña al equipo en cada temporada.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h3>Historia y títulos</h3>
+                    <p>
+                        Campeonatos y momentos deportivos que forman
+                        parte del legado de La Máquina.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <i class="fa-solid fa-people-group"></i>
+                    <h3>Unión entre generaciones</h3>
+                    <p>
+                        Una pasión que pasa de padres a hijos y que
+                        mantiene viva la identidad celeste.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contenedor">
+        <div class="llamado">
+
+            <h2>La historia sigue contigo</h2>
+
+            <p>
+                Cada generación tiene una historia que contar.
+                Sigue apoyando a La Máquina y forma parte del camino
+                que aún queda por recorrer.
+            </p>
+
+            <a href="titulos.html" class="boton">
+                <i class="fa-solid fa-trophy"></i>
+                Explorar el palmarés
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="contenedor">
+        © 2026 Cruz Azul Eterno · Sitio de aficionados no oficial.
+        <br>
+        <a href="eterno.html" style="color:#c5e9ff">
+            Regresar a la página principal
+        </a>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1122 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de fútbol de Cruz Azul Eterno: cancha, partidos, jugadores y pasión celeste.">
+    <meta name="theme-color" content="#071b49">
+
+    <title>Jugadores y Galería | Cruz Azul Eterno</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --azul: #071b49;
+            --azul-oscuro: #04112f;
+            --celeste: #42b8f5;
+            --celeste-claro: #a8e2ff;
+            --blanco: #ffffff;
+            --fondo: #f3f7fc;
+            --texto: #26354b;
+            --gris: #68768b;
+            --radio: 20px;
+            --sombra: 0 12px 35px rgba(7, 27, 73, .10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--fondo);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        body.sin-scroll {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid var(--celeste);
+            outline-offset: 4px;
+        }
+
+        .contenedor {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+        /* NAVEGACIÓN */
+
+        .navbar {
+            background: rgba(4, 17, 47, .97);
+            color: var(--blanco);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-contenido {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -.5px;
+            flex-shrink: 0;
+        }
+
+        .logo-icono {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            background: linear-gradient(135deg, var(--celeste), #1687d0);
+            color: var(--azul-oscuro);
+            font-size: 1.35rem;
+        }
+
+        .logo span {
+            color: var(--celeste);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-size: .87rem;
+            font-weight: 600;
+            color: #e6edf8;
+            transition: color .25s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.activo {
+            color: var(--celeste);
+        }
+
+        .nav-links .btn-nav {
+            background: var(--celeste);
+            color: var(--azul-oscuro);
+            padding: 11px 17px;
+            border-radius: 10px;
+        }
+
+        .nav-links .btn-nav:hover {
+            background: var(--blanco);
+            color: var(--azul);
+        }
+
+        /* PORTADA */
+
+        .hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            min-height: 460px;
+            display: flex;
+            align-items: center;
+            color: var(--blanco);
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4, 17, 47, .96),
+                    rgba(7, 27, 73, .78),
+                    rgba(7, 27, 73, .28)
+                ),
+                url('https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=1800&q=85')
+                center 45% / cover no-repeat;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--celeste), #fff, var(--celeste));
+            z-index: -1;
+        }
+
+        .hero-contenido {
+            max-width: 760px;
+            padding: 75px 0 85px;
+        }
+
+        .etiqueta {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: rgba(66, 184, 245, .15);
+            border: 1px solid rgba(168, 226, 255, .4);
+            color: var(--celeste-claro);
+            padding: 9px 15px;
+            border-radius: 50px;
+            font-size: .77rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.7rem);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            margin-bottom: 23px;
+        }
+
+        .hero h1 span {
+            color: var(--celeste);
+        }
+
+        .hero p {
+            max-width: 620px;
+            color: #e2eaf7;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .botones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 21px;
+            border-radius: 12px;
+            font-size: .9rem;
+            font-weight: 800;
+            transition: transform .25s, background .25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-principal {
+            background: var(--celeste);
+            color: var(--azul-oscuro);
+        }
+
+        .btn-principal:hover {
+            background: var(--blanco);
+        }
+
+        .btn-secundario {
+            border: 1px solid rgba(255, 255, 255, .45);
+            color: var(--blanco);
+            background: rgba(255, 255, 255, .06);
+        }
+
+        .btn-secundario:hover {
+            background: rgba(255, 255, 255, .15);
+        }
+
+        /* INTRODUCCIÓN */
+
+        .intro {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 78px 0 36px;
+        }
+
+        .subtitulo {
+            display: inline-block;
+            color: #1687d0;
+            text-transform: uppercase;
+            font-size: .77rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .intro h2 {
+            color: var(--azul);
+            font-size: clamp(1.9rem, 4vw, 2.7rem);
+            line-height: 1.2;
+            margin-bottom: 17px;
+        }
+
+        .intro p {
+            color: var(--gris);
+            font-size: .98rem;
+        }
+
+        /* FILTROS */
+
+        .filtros {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 26px 0 35px;
+        }
+
+        .filtro {
+            cursor: pointer;
+            border: 1px solid #dce6f2;
+            background: var(--blanco);
+            color: var(--azul);
+            padding: 11px 19px;
+            border-radius: 50px;
+            font-size: .84rem;
+            font-weight: 700;
+            transition: all .25s;
+        }
+
+        .filtro:hover,
+        .filtro.activo {
+            color: var(--blanco);
+            background: var(--azul);
+            border-color: var(--azul);
+            box-shadow: 0 6px 15px rgba(7, 27, 73, .15);
+        }
+
+        /* GALERÍA */
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            padding-bottom: 85px;
+            align-items: stretch;
+        }
+
+        .tarjeta {
+            min-width: 0;
+            background: var(--blanco);
+            border-radius: var(--radio);
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(7, 27, 73, .16);
+        }
+
+        .tarjeta[hidden] {
+            display: none !important;
+        }
+
+        .imagen-contenedor {
+            position: relative;
+            height: 245px;
+            overflow: hidden;
+            background: #dce8f5;
+        }
+
+        .imagen-contenedor img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .55s;
+        }
+
+        .tarjeta:hover .imagen-contenedor img {
+            transform: scale(1.07);
+        }
+
+        .imagen-etiqueta {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(4, 17, 47, .88);
+            color: var(--celeste-claro);
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: .7rem;
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        .ver-imagen {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            width: 43px;
+            height: 43px;
+            display: grid;
+            place-items: center;
+            border: none;
+            border-radius: 50%;
+            background: var(--celeste);
+            color: var(--azul);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background .2s, transform .2s;
+        }
+
+        .ver-imagen:hover {
+            background: var(--blanco);
+            transform: scale(1.08);
+        }
+
+        .tarjeta-contenido {
+            padding: 23px;
+        }
+
+        .tarjeta-contenido h3 {
+            color: var(--azul);
+            font-size: 1.12rem;
+            margin-bottom: 9px;
+        }
+
+        .tarjeta-contenido p {
+            color: var(--gris);
+            font-size: .88rem;
+            margin-bottom: 17px;
+        }
+
+        .tarjeta-pie {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding-top: 15px;
+            border-top: 1px solid #edf1f7;
+            color: #1687d0;
+            font-size: .78rem;
+            font-weight: 800;
+        }
+
+        .tarjeta-pie i {
+            font-size: 1rem;
+        }
+
+        /* FRANJA FINAL */
+
+        .franja {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(120deg, var(--azul-oscuro), var(--azul), #104b83);
+            color: var(--blanco);
+            padding: 65px 0;
+        }
+
+        .franja-contenido {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .franja-texto {
+            max-width: 690px;
+        }
+
+        .franja h2 {
+            font-size: clamp(1.7rem, 4vw, 2.5rem);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .franja h2 span {
+            color: var(--celeste);
+        }
+
+        .franja p {
+            color: #d3e2f5;
+            font-size: .95rem;
+        }
+
+        .franja-icono {
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            width: 115px;
+            height: 115px;
+            border-radius: 28px;
+            background: rgba(66, 184, 245, .14);
+            border: 1px solid rgba(168, 226, 255, .3);
+            color: var(--celeste);
+            font-size: 3.3rem;
+            transform: rotate(-5deg);
+        }
+
+        /* AVISO */
+
+        .aviso {
+            padding: 25px 28px;
+            margin: 0 auto 65px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: #eaf5ff;
+            border: 1px solid #d2eaff;
+            border-radius: 14px;
+            color: #34516f;
+            font-size: .82rem;
+        }
+
+        .aviso i {
+            color: #1687d0;
+            font-size: 1.25rem;
+            margin-top: 2px;
+        }
+
+        /* PIE DE PÁGINA */
+
+        .footer {
+            background: #030d25;
+            color: #dce7f6;
+            padding: 45px 0 22px;
+        }
+
+        .footer-contenido {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            padding-bottom: 30px;
+        }
+
+        .footer p {
+            color: #9eafc7;
+            font-size: .82rem;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            font-size: .82rem;
+            color: #dce7f6;
+            transition: color .2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--celeste);
+        }
+
+        .footer-copy {
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            padding-top: 20px;
+            text-align: center;
+            color: #8497b4;
+            font-size: .76rem;
+        }
+
+        /* VISOR DE IMÁGENES */
+
+        .visor {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            background: rgba(0, 8, 25, .92);
+        }
+
+        .visor.abierto {
+            display: flex;
+        }
+
+        .visor-contenido {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .visor img {
+            max-height: 78vh;
+            width: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .visor-titulo {
+            text-align: center;
+            color: var(--blanco);
+            margin-top: 15px;
+            font-weight: 700;
+        }
+
+        .visor-cerrar {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 50%;
+            color: white;
+            background: rgba(255,255,255,.1);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .nav-contenido {
+                flex-direction: column;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px 20px;
+            }
+
+            .galeria {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .franja-contenido {
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                min-height: 430px;
+                background-position: center;
+            }
+
+            .hero-contenido {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero p {
+                font-size: .94rem;
+            }
+
+            .nav-links {
+                gap: 10px 15px;
+            }
+
+            .nav-links a {
+                font-size: .78rem;
+            }
+
+            .nav-links .btn-nav {
+                padding: 8px 12px;
+            }
+
+            .intro {
+                padding-top: 55px;
+            }
+
+            .galeria {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding-bottom: 55px;
+            }
+
+            .imagen-contenedor {
+                height: 240px;
+            }
+
+            .franja-contenido {
+                flex-direction: column;
+            }
+
+            .franja-icono {
+                width: 80px;
+                height: 80px;
+                font-size: 2.2rem;
+                border-radius: 20px;
+            }
+
+            .aviso {
+                padding: 20px;
+            }
+
+            .footer-contenido {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="contenedor nav-contenido">
+
+            <a href="eterno.html" class="logo"
+               aria-label="Cruz Azul Eterno, página principal">
+                <div class="logo-icono">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>CRUZ AZUL <span>ETERNO</span></div>
+            </a>
+
+            <nav class="nav-links" aria-label="Navegación principal">
+                <a href="eterno.html">Inicio</a>
+                <a href="historia.html">Historia</a>
+                <a href="titulos.html">Títulos</a>
+                <a href="noticias.html">Noticias</a>
+                <a href="jugadores.html" class="activo" aria-current="page">Galería</a>
+                <a href="#galeria" class="btn-nav">
+                    Ver imágenes <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PORTADA -->
+        <section class="hero">
+            <div class="contenedor">
+                <div class="hero-contenido">
+
+                    <div class="etiqueta">
+                        <i class="fa-solid fa-camera"></i>
+                        LA PASIÓN SE VIVE EN AZUL
+                    </div>
+
+                    <h1>La pasión de<br><span>La Máquina</span></h1>
+
+                    <p>
+                        Un espacio dedicado al fútbol, las emociones del estadio
+                        y el orgullo de acompañar a Cruz Azul en cada partido.
+                        Porque ser celeste es mucho más que llevar una camiseta.
+                    </p>
+
+                    <div class="botones">
+                        <a href="#galeria" class="btn btn-principal">
+                            <i class="fa-solid fa-images"></i>
+                            Explorar galería
+                        </a>
+
+                        <a href="historia.html" class="btn btn-secundario">
+                            <i class="fa-solid fa-book-open"></i>
+                            Conocer la historia
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA -->
+        <section class="contenedor" id="galeria">
+
+            <div class="intro">
+                <span class="subtitulo">Nuestra pasión, en imágenes</span>
+                <h2>Galería de fútbol</h2>
+                <p>
+                    La cancha, el balón y la afición forman parte de una misma
+                    historia. Explora esta selección visual inspirada en la
+                    emoción del fútbol y los colores celestes.
+                </p>
+            </div>
+
+            <!-- FILTROS -->
+            <div class="filtros" role="group" aria-label="Filtrar galería">
+
+                <button class="filtro activo" type="button"
+                        data-filtro="todos" aria-pressed="true">
+                    Todas las imágenes
+                </button>
+
+                <button class="filtro" type="button"
+                        data-filtro="cancha" aria-pressed="false">
+                    <i class="fa-solid fa-futbol"></i>
+                    La cancha
+                </button>
+
+                <button class="filtro" type="button"
+                        data-filtro="partido" aria-pressed="false">
+                    <i class="fa-solid fa-trophy"></i>
+                    El partido
+                </button>
+
+                <button class="filtro" type="button"
+                        data-filtro="aficion" aria-pressed="false">
+                    <i class="fa-solid fa-users"></i>
+                    La pasión
+                </button>
+
+            </div>
+
+            <div class="galeria">
+
+                <!-- IMAGEN 1: CANCHA -->
+                <article class="tarjeta" data-categoria="cancha">
+
+                    <div class="imagen-contenedor">
+                        <img
+                            src="https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=900&q=85"
+                            alt="Vista de un campo deportivo de fútbol"
+                            loading="lazy">
+
+                        <span class="imagen-etiqueta">LA CANCHA</span>
+
+                        <button class="ver-imagen" type="button"
+                                aria-label="Ampliar imagen: El escenario de la pasión"
+                                data-titulo="El escenario de la pasión"
+                                data-imagen="https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=1400&q=90">
+                            <i class="fa-solid fa-expand"></i>
+                        </button>
+                    </div>
+
+                    <div class="tarjeta-contenido">
+                        <h3>El escenario de la pasión</h3>
+                        <p>
+                            Cada cancha guarda historias de esfuerzo, entrega
+                            y momentos que permanecen en la memoria.
+                        </p>
+
+                        <div class="tarjeta-pie">
+                            <span>Fútbol en estado puro</span>
+                            <i class="fa-solid fa-futbol"></i>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- IMAGEN 2: PARTIDO -->
+                <article class="tarjeta" data-categoria="partido">
+
+                    <div class="imagen-contenedor">
+                        <img
+                            src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85"
+                            alt="Acción y emoción durante un partido de fútbol"
+                            loading="lazy">
+
+                        <span class="imagen-etiqueta">EL PARTIDO</span>
+
+                        <button class="ver-imagen" type="button"
+                                aria-label="Ampliar imagen: La emoción del partido"
+                                data-titulo="La emoción del partido"
+                                data-imagen="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1400&q=90">
+                            <i class="fa-solid fa-expand"></i>
+                        </button>
+                    </div>
+
+                    <div class="tarjeta-contenido">
+                        <h3>La emoción del partido</h3>
+                        <p>
+                            Noventa minutos llenos de intensidad, jugadas
+                            decisivas y la ilusión de celebrar cada gol.
+                        </p>
+
+                        <div class="tarjeta-pie">
+                            <span>Hasta el último minuto</span>
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- IMAGEN 3: PASIÓN HASTA EL FINAL -->
+                <article class="tarjeta" data-categoria="aficion">
+
+                    <div class="imagen-contenedor">
+                        <img
+                            src="https://blob.ovaciones.com/images/2026/10/14/cruz-azul-tercera-peor-defensa-en-apertura-actual-3947bdeb-focus-0-0-811-456.webp"
+                            alt="Fotografía de Cruz Azul publicada por Ovaciones"
+                            loading="lazy">
+
+                        <span class="imagen-etiqueta">LA AFICIÓN</span>
+
+                        <button class="ver-imagen" type="button"
+                                aria-label="Ampliar imagen: Pasión hasta el final"
+                                data-titulo="Pasión hasta el final"
+                                data-imagen="https://blob.ovaciones.com/images/2026/10/14/cruz-azul-tercera-peor-defensa-en-apertura-actual-3947bdeb-focus-0-0-811-456.webp">
+                            <i class="fa-solid fa-expand"></i>
+                        </button>
+                    </div>
+
+                    <div class="tarjeta-contenido">
+                        <h3>Pasión hasta el final</h3>
+                        <p>
+                            El sentimiento celeste une generaciones que apoyan
+                            al equipo en los buenos momentos y en los difíciles.
+                        </p>
+
+                        <div class="tarjeta-pie">
+                            <span>Orgullo celeste</span>
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <!-- AVISO -->
+            <div class="aviso">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <p>
+                    <strong>Nota:</strong> las imágenes son ilustrativas y
+                    representan el ambiente del fútbol. No necesariamente
+                    corresponden a partidos oficiales de Cruz Azul ni muestran
+                    a sus jugadores. Para fotografías oficiales, utiliza
+                    imágenes autorizadas y respeta sus derechos de uso.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- MENSAJE FINAL -->
+        <section class="franja">
+            <div class="contenedor franja-contenido">
+
+                <div class="franja-texto">
+                    <h2>
+                        Una camiseta.<br>
+                        <span>Una historia. Una pasión eterna.</span>
+                    </h2>
+
+                    <p>
+                        Cruz Azul es esfuerzo, tradición y una afición que nunca
+                        deja de creer. Sigue explorando la historia y los logros
+                        de La Máquina.
+                    </p>
+
+                    <div class="botones" style="margin-top: 24px;">
+                        <a href="titulos.html" class="btn btn-principal">
+                            <i class="fa-solid fa-trophy"></i>
+                            Ver títulos
+                        </a>
+
+                        <a href="eterno.html" class="btn btn-secundario">
+                            <i class="fa-solid fa-house"></i>
+                            Volver al inicio
+                        </a>
+                    </div>
+                </div>
+
+                <div class="franja-icono" aria-hidden="true">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="contenedor">
+
+            <div class="footer-contenido">
+
+                <div>
+                    <a href="eterno.html" class="logo">
+                        <div class="logo-icono">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>CRUZ AZUL <span>ETERNO</span></div>
+                    </a>
+
+                    <p>
+                        Un espacio creado por y para los aficionados celestes.
+                    </p>
+                </div>
+
+                <nav class="footer-links" aria-label="Enlaces del pie de página">
+                    <a href="eterno.html">Inicio</a>
+                    <a href="historia.html">Historia</a>
+                    <a href="titulos.html">Títulos</a>
+                    <a href="noticias.html">Noticias</a>
+                    <a href="jugadores.html">Galería</a>
+
+                    <a href="https://cfcruzazul.com/plantel/galerias/"
+                       target="_blank" rel="noopener noreferrer">
+                        Galerías oficiales
+                    </a>
+                </nav>
+
+            </div>
+
+            <div class="footer-copy">
+                © <span id="anio"></span> Cruz Azul Eterno.
+                Proyecto de aficionados. No es un sitio oficial del club.
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- VISOR DE IMÁGENES -->
+    <div class="visor" id="visor"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Visor de imágenes"
+         aria-hidden="true">
+
+        <div class="visor-contenido">
+
+            <button class="visor-cerrar" id="cerrarVisor" type="button"
+                    aria-label="Cerrar imagen">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <img id="visorImagen" src="" alt="">
+            <p class="visor-titulo" id="visorTitulo"></p>
+
+        </div>
+    </div>
+
+    <script>
+        "use strict";
+
+        // FILTROS DE LA GALERÍA
+        const botonesFiltro = document.querySelectorAll(".filtro");
+        const tarjetas = document.querySelectorAll(".tarjeta");
+
+        botonesFiltro.forEach((boton) => {
+            boton.addEventListener("click", () => {
+                const filtro = boton.dataset.filtro;
+
+                botonesFiltro.forEach((otroBoton) => {
+                    otroBoton.classList.remove("activo");
+                    otroBoton.setAttribute("aria-pressed", "false");
+                });
+
+                boton.classList.add("activo");
+                boton.setAttribute("aria-pressed", "true");
+
+                tarjetas.forEach((tarjeta) => {
+                    const coincide =
+                        filtro === "todos" ||
+                        tarjeta.dataset.categoria === filtro;
+
+                    tarjeta.hidden = !coincide;
+                });
+            });
+        });
+
+        // VISOR PARA AMPLIAR IMÁGENES
+        const visor = document.getElementById("visor");
+        const visorImagen = document.getElementById("visorImagen");
+        const visorTitulo = document.getElementById("visorTitulo");
+        const cerrarVisor = document.getElementById("cerrarVisor");
+
+        let elementoAnterior = null;
+
+        document.querySelectorAll(".ver-imagen").forEach((boton) => {
+            boton.addEventListener("click", () => {
+                elementoAnterior = document.activeElement;
+
+                visorImagen.src = boton.dataset.imagen;
+                visorImagen.alt = boton.dataset.titulo;
+                visorTitulo.textContent = boton.dataset.titulo;
+
+                visor.classList.add("abierto");
+                visor.setAttribute("aria-hidden", "false");
+                document.body.classList.add("sin-scroll");
+
+                cerrarVisor.focus();
+            });
+        });
+
+        function cerrarVentanaImagen() {
+            visor.classList.remove("abierto");
+            visor.setAttribute("aria-hidden", "true");
+            visorImagen.src = "";
+            document.body.classList.remove("sin-scroll");
+
+            if (elementoAnterior) {
+                elementoAnterior.focus();
+            }
+        }
+
+        cerrarVisor.addEventListener("click", cerrarVentanaImagen);
+
+        visor.addEventListener("click", (evento) => {
+            if (evento.target === visor) {
+                cerrarVentanaImagen();
+            }
+        });
+
+        document.addEventListener("keydown", (evento) => {
+            if (
+                evento.key === "Escape" &&
+                visor.classList.contains("abierto")
+            ) {
+                cerrarVentanaImagen();
+            }
+        });
+
+        // AÑO AUTOMÁTICO
+        document.getElementById("anio").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

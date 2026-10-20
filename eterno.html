@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Cruz Azul Eterno: noticias, jugadores, historia, títulos y pasión celeste.">
+
+    <meta name="theme-color" content="#071b49">
+
+    <title>Cruz Azul Eterno | La pasión celeste</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Iconos Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado" id="inicio">
+
+        <a href="#inicio" class="marca" aria-label="Cruz Azul Eterno, inicio">
+
+            <img
+                src="imagenes/logo-cruz-azul.png"
+                alt="Escudo de Cruz Azul"
+                class="marca-logo"
+            >
+
+            <span class="marca-texto">
+                <strong>CRUZ AZUL ETERNO</strong>
+                <small>LA PASIÓN NUNCA TERMINA</small>
+            </span>
+
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="navegacion"
+        >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav class="navegacion" id="navegacion" aria-label="Menú principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#noticias">Noticias</a>
+            <a href="#partidos">Partidos</a>
+            <a href="#jugadores">Galería</a>
+            <a href="#historia">Historia</a>
+            <a href="#titulos">Títulos</a>
+            <a href="#comentarios" class="nav-boton">Comunidad</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- PORTADA PRINCIPAL -->
+        <section class="hero" aria-labelledby="titulo-principal">
+
+            <div class="hero-contenido">
+
+                <span class="etiqueta">
+                    <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                    EL BLOG DE LA AFICIÓN CELESTE
+                </span>
+
+                <h1 id="titulo-principal">
+                    UN SENTIMIENTO
+                    <br>
+                    <span>QUE NUNCA SE APAGA.</span>
+                </h1>
+
+                <p>
+                    Noticias, historias, jugadores y toda la pasión
+                    por La Máquina. Este es nuestro espacio celeste.
+                </p>
+
+                <div class="hero-botones">
+
+                    <a href="#noticias" class="boton boton-azul">
+                        <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+                        Explorar noticias
+                    </a>
+
+                    <a href="#historia" class="boton boton-borde">
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                        Nuestra historia
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-decoracion" aria-hidden="true">
+                AZUL
+            </div>
+
+        </section>
+
+        <!-- BARRA INFORMATIVA -->
+        <div class="barra-info" aria-label="Identidad del sitio">
+
+            <span>
+                <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                PASIÓN CELESTE
+            </span>
+
+            <span>
+                <i class="fa-solid fa-futbol" aria-hidden="true"></i>
+                FÚTBOL Y TRADICIÓN
+            </span>
+
+            <span>
+                <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                ORGULLO CRUZAZULINO
+            </span>
+
+        </div>
+
+        <!-- NOTICIAS Y ARTÍCULOS -->
+        <section class="seccion" id="noticias" aria-labelledby="titulo-noticias">
+
+            <div class="titulo-seccion">
+
+                <div>
+                    <span class="subtitulo">ACTUALIDAD CELESTE</span>
+                    <h2 id="titulo-noticias">Noticias y artículos</h2>
+                </div>
+
+                <span class="contador">
+                    EL MUNDO DE LA MÁQUINA
+                </span>
+
+            </div>
+
+            <!-- FILTROS DE NOTICIAS -->
+            <div class="filtros" aria-label="Filtrar artículos">
+
+                <button
+                    class="filtro activo"
+                    type="button"
+                    data-filtro="todos"
+                    aria-pressed="true"
+                >
+                    Todas
+                </button>
+
+                <button
+                    class="filtro"
+                    type="button"
+                    data-filtro="noticias"
+                    aria-pressed="false"
+                >
+                    Noticias
+                </button>
+
+                <button
+                    class="filtro"
+                    type="button"
+                    data-filtro="opinion"
+                    aria-pressed="false"
+                >
+                    Opinión
+                </button>
+
+                <button
+                    class="filtro"
+                    type="button"
+                    data-filtro="historia"
+                    aria-pressed="false"
+                >
+                    Historia
+                </button>
+
+            </div>
+
+            <div class="noticias-grid" id="noticiasGrid">
+
+                <!-- ARTÍCULO 1 -->
+                <article class="noticia-card" data-categoria="historia">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80"
+                        alt="Estadio de fútbol"
+                        loading="lazy"
+                    >
+
+                    <div class="noticia-contenido">
+
+                        <span class="categoria">NUESTRA HISTORIA</span>
+
+                        <h3>
+                            La historia de una pasión que trasciende generaciones
+                        </h3>
+
+                        <p>
+                            Descubre cómo los colores celestes se convirtieron
+                            en parte de la identidad de millones de aficionados.
+                            Un recorrido por los orígenes, las leyendas y los
+                            momentos que marcaron la historia de La Máquina.
+                        </p>
+
+                        <a href="historia.html" class="btn-actualidad">
+                            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                            <span>Conocer la historia</span>
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- ARTÍCULO 2 -->
+                <article class="noticia-card" data-categoria="noticias">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=80"
+                        alt="Balón de fútbol sobre el campo"
+                        loading="lazy"
+                    >
+
+                    <div class="noticia-contenido">
+
+                        <span class="categoria">ACTUALIDAD</span>
+
+                        <h3>
+                            Todo sobre la actualidad de La Máquina
+                        </h3>
+
+                        <p>
+                            Consulta novedades, noticias verificadas,
+                            información del equipo y análisis relacionados
+                            con Cruz Azul.
+                        </p>
+
+                        <a href="noticias.html" class="btn-actualidad">
+                            <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+                            <span>Explorar noticias</span>
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- ARTÍCULO 3 -->
+                <article class="noticia-card" data-categoria="opinion">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80"
+                        alt="Jugadores disputando un partido de fútbol"
+                        loading="lazy"
+                    >
+
+                    <div class="noticia-contenido">
+
+                        <span class="categoria">OPINIÓN</span>
+
+                        <h3>
+                            ¿Qué significa ser un verdadero celeste?
+                        </h3>
+
+                        <p>
+                            Una reflexión sobre la fidelidad, la pasión
+                            y el orgullo de apoyar nuestros colores
+                            en los buenos y malos momentos.
+                        </p>
+
+                        <a href="#comentarios" class="leer-mas">
+                            Comparte tu opinión
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p class="nota-demo">
+                Los artículos anteriores son ejemplos de contenido.
+                Verifica las noticias y sus fechas antes de publicarlas
+                como información actual.
+            </p>
+
+        </section>
+
+        <!-- PARTIDOS Y RESULTADOS -->
+        <section class="seccion seccion-azul" id="partidos"
+                 aria-labelledby="titulo-partidos">
+
+            <div class="titulo-seccion titulo-claro">
+
+                <div>
+                    <span class="subtitulo">CALENDARIO CELESTE</span>
+                    <h2 id="titulo-partidos">Partidos y resultados</h2>
+                </div>
+
+            </div>
+
+            <div class="imagen-partidos">
+
+                <img
+                    src="imagenes/Partidos.jpeg"
+                    alt="Calendario de partidos de Cruz Azul"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <p class="texto-aclaracion">
+                Consulta las fechas, los rivales y los resultados de La Máquina.
+                Verifica la información antes de publicarla.
+            </p>
+
+        </section>
+
+        <!-- GALERÍA Y JUGADORES -->
+        <section class="seccion" id="jugadores"
+                 aria-labelledby="titulo-galeria">
+
+            <div class="titulo-seccion">
+
+                <div>
+                    <span class="subtitulo">ORGULLO CELESTE</span>
+                    <h2 id="titulo-galeria">Galería de fútbol</h2>
+                </div>
+
+            </div>
+
+            <p class="descripcion galeria-descripcion">
+                Un espacio para destacar a los jugadores, las celebraciones
+                y los momentos que viven los aficionados de La Máquina.
+            </p>
+
+            <!-- BOTÓN CENTRADO -->
+            <div class="galeria-boton">
+
+                <a href="jugadores.html" class="btn-actualidad">
+                    <i class="fa-solid fa-images" aria-hidden="true"></i>
+                    <span>Explorar galería</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+
+            </div>
+
+            <!-- IMÁGENES DE LA GALERÍA -->
+            <div class="galeria">
+
+                <figure>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80"
+                        alt="Vista de un estadio de fútbol"
+                        loading="lazy"
+                    >
+
+                    <figcaption>
+                        El escenario de la pasión
+                    </figcaption>
+
+                </figure>
+
+                <figure>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80"
+                        alt="Balón de fútbol en el campo"
+                        loading="lazy"
+                    >
+
+                    <figcaption>
+                        La emoción del partido
+                    </figcaption>
+
+                </figure>
+
+                <figure>
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP60_Rnuj6gnk8glS75HF5RCQko84gkBJPJF5e4BmzPA&s=10"
+                        alt="Imagen relacionada con Cruz Azul"
+                        loading="lazy"
+                    >
+
+                    <figcaption>
+                        Pasión hasta el final
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+            <p class="nota-demo">
+                Las imágenes son ilustrativas y no necesariamente
+                corresponden a fotografías oficiales de los jugadores de Cruz Azul.
+            </p>
+
+        </section>
+
+        <!-- HISTORIA DEL CLUB -->
+        <section class="seccion historia" id="historia"
+                 aria-labelledby="titulo-historia">
+
+            <div class="historia-texto">
+
+                <span class="subtitulo">NUESTRAS RAÍCES</span>
+
+                <h2 id="titulo-historia">
+                    Una historia pintada de azul
+                </h2>
+
+                <p>
+                    El Club de Fútbol Cruz Azul nació en 1927, ligado a
+                    la Cooperativa La Cruz Azul. Con el tiempo, el equipo
+                    construyó una identidad reconocida por su afición,
+                    sus títulos y sus grandes protagonistas.
+                </p>
+
+                <p>
+                    Este espacio está dedicado a recordar sus campeonatos,
+                    sus leyendas y los momentos que forman parte de su historia.
+                </p>
+
+                <a href="historia.html" class="boton boton-azul">
+                    <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                    Leer nuestra historia
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+
+            </div>
+
+            <div class="historia-dato">
+
+                <span class="historia-numero">1927</span>
+
+                <span>EL ORIGEN DE LA HISTORIA</span>
+
+                <p>
+                    Tradición, fútbol y orgullo celeste.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- TÍTULOS -->
+        <section class="seccion" id="titulos"
+                 aria-labelledby="titulo-titulos">
+
+            <div class="titulo-seccion">
+
+                <div>
+                    <span class="subtitulo">LEGADO Y GLORIA</span>
+                    <h2 id="titulo-titulos">Los títulos de La Máquina</h2>
+                </div>
+
+            </div>
+
+            <div class="titulos-grid">
+
+                <article class="titulo-card">
+
+                    <span aria-hidden="true">
+                        <i class="fa-solid fa-trophy"></i>
+                    </span>
+
+                    <h3>Liga MX</h3>
+
+                    <p>
+                        Campeonatos de liga que marcaron generaciones.
+                    </p>
+
+                </article>
+
+                <article class="titulo-card">
+
+                    <span aria-hidden="true">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </span>
+
+                    <h3>CONCACAF</h3>
+
+                    <p>
+                        Participaciones y conquistas internacionales.
+                    </p>
+
+                </article>
+
+                <article class="titulo-card">
+
+                    <span aria-hidden="true">
+                        <i class="fa-solid fa-medal"></i>
+                    </span>
+
+                    <h3>Otras copas</h3>
+
+                    <p>
+                        Recuerdos de torneos y logros históricos.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <p class="nota-demo">
+                Descubre los campeonatos, las leyendas y los momentos
+                que construyeron la historia de La Máquina.
+            </p>
+
+            <div class="historia-boton-contenedor">
+
+                <a href="titulos.html" class="boton boton-azul">
+                    <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                    Ver historia completa
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- COMUNIDAD Y COMENTARIOS -->
+        <section class="seccion comentarios-seccion" id="comentarios"
+                 aria-labelledby="titulo-comunidad">
+
+            <div class="titulo-seccion">
+
+                <div>
+                    <span class="subtitulo">VOZ DE LA AFICIÓN</span>
+                    <h2 id="titulo-comunidad">Comunidad celeste</h2>
+                </div>
+
+            </div>
+
+            <p class="descripcion">
+                ¿Cuál es tu mejor recuerdo de Cruz Azul?
+                Comparte tu opinión con otros aficionados.
+            </p>
+
+            <form id="comentarioForm" class="comentario-form">
+
+                <label for="nombre">
+                    Tu nombre
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    maxlength="40"
+                    placeholder="¿Cómo te llamas?"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="comentario">
+                    Tu comentario
+                </label>
+
+                <textarea
+                    id="comentario"
+                    name="comentario"
+                    maxlength="500"
+                    rows="4"
+                    placeholder="Escribe tu mensaje celeste..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="boton boton-azul">
+                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                    Publicar comentario
+                </button>
+
+                <p class="aviso">
+                    Los comentarios se guardan únicamente en este navegador.
+                </p>
+
+            </form>
+
+            <div class="comentarios-lista">
+
+                <h3>
+                    Comentarios de los aficionados
+                </h3>
+
+                <div id="listaComentarios" aria-live="polite">
+
+                    <p class="sin-comentarios">
+                        ¡Sé el primero en compartir tu pasión celeste!
+                    </p>
+
+                </div>
+
+                <button
+                    id="borrarComentarios"
+                    class="boton-borrar"
+                    type="button"
+                >
+                    <i class="fa-solid fa-trash" aria-hidden="true"></i>
+                    Borrar mis comentarios de este navegador
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+
+        <a href="#inicio" class="footer-marca">
+            CRUZ AZUL ETERNO
+        </a>
+
+        <p>
+            Un espacio hecho por aficionados para aficionados.
+        </p>
+
+        <div class="footer-enlaces">
+            <a href="#noticias">Noticias</a>
+            <a href="#historia">Historia</a>
+            <a href="#titulos">Títulos</a>
+            <a href="#comentarios">Comunidad</a>
+        </div>
+
+        <small>
+            Blog independiente de aficionados.
+            No es un sitio oficial del Club de Fútbol Cruz Azul.
+        </small>
+
+    </footer>
+
+</body>
+</html>
